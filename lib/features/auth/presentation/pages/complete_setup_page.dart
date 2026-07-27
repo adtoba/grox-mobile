@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/auth/presentation/widgets/setup_stepper.dart';
 import 'package:grox/shared/widgets/app_scaffold.dart';
@@ -50,46 +52,36 @@ class _CompleteSetupPageState extends ConsumerState<CompleteSetupPage> {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'grox-red'.toPng,
-                          width: 48.w,
-                          height: 42.h,
-                        ),
-                        SizedBox(height: 16.h),
-                        Text(
-                          "You're almost set up",
-                          style: TextStyle(
-                            fontSize: 24.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          'In line with regulations, we have to collect and verify your information',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.grey9,
-                          ),
-                        ),
-                        SizedBox(height: 40.h),
-                        const SetupStepper(
-                          currentStep: 2,
-                          steps: _steps,
-                        ),
-                      ],
-                    ),
-                  ),
+              Image.asset(
+                'grox-red'.toPng,
+                width: 48.w,
+                height: 42.h,
+              ),
+              SizedBox(height: 16.h),
+              Text(
+                "You're almost set up",
+                style: TextStyle(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
+              SizedBox(height: 8.h),
+              Text(
+                'In line with regulations, we have to collect and verify your information',
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.grey9,
+                ),
+              ),
+              SizedBox(height: 40.h),
+              const SetupStepper(
+                currentStep: 2,
+                steps: _steps,
+              ),
+              SizedBox(height: 40.h),
               PrimaryButton(
                 text: 'Submit Documents',
                 height: 52.h,
@@ -106,10 +98,11 @@ class _CompleteSetupPageState extends ConsumerState<CompleteSetupPage> {
                 color: AppColors.offWhite,
                 textColor: AppColors.black,
                 onPressed: () {
-                  
+                  context.push(AppRoutes.dashboard);
                 },
               ),
               SizedBox(height: 8.h),
+              
             ],
           ),
         ),
