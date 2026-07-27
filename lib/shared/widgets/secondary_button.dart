@@ -3,10 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/shared/enum/button_size.dart';
 
-
-
-class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
+class SecondaryButton extends StatelessWidget {
+  const SecondaryButton({
     super.key, 
     required this.text, 
     this.size = ButtonSize.medium, 
@@ -22,11 +20,11 @@ class PrimaryButton extends StatelessWidget {
     return MaterialButton(
       height: _getButtonHeight(size),
       onPressed: onPressed,
-      color: AppColors.poppy,
+      color: AppColors.offWhite,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(32.r),
         side: BorderSide(
-          color: AppColors.poppy,
+          color: AppColors.grey3,
           width: 1.w,
         )
       ),
