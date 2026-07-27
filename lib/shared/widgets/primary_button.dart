@@ -14,7 +14,9 @@ class PrimaryButton extends StatelessWidget {
     this.textColor = AppColors.white,
     this.width = double.infinity,
     this.size = ButtonSize.large, 
-    this.onPressed
+    this.onPressed,
+    this.borderColor,
+    this.elevation,
   });
 
   final String text;
@@ -22,13 +24,16 @@ class PrimaryButton extends StatelessWidget {
   final double? height;
   final Color? color;
   final Color? textColor;
+  final Color? borderColor;
   final ButtonSize size;
+  final double? elevation;
   final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       minWidth: width,
+      elevation: elevation,
       height: height ?? _getButtonHeight(size),
       onPressed: onPressed,
       disabledColor: AppColors.poppy4,
@@ -36,7 +41,7 @@ class PrimaryButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(32.r),
         side: BorderSide(
-          color: onPressed != null ? AppColors.poppy : AppColors.poppy5,
+          color: borderColor ?? (onPressed != null ? AppColors.poppy : AppColors.poppy5),
           width: 1.w,
         )
       ),

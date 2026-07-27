@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/shared/enum/button_size.dart';
 import 'package:grox/shared/widgets/app_scaffold.dart';
@@ -114,7 +116,7 @@ class _VerifyPhoneNumberPageState extends State<VerifyPhoneNumberPage> {
                 size: ButtonSize.large,
                 text: "Submit",
                 onPressed: () {
-                  
+                  context.push(AppRoutes.completeSetup);
                 },
               ),
             ),
