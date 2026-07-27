@@ -1,4 +1,4 @@
-package com.usegrox.app.grox
+package com.usegrox.grox
 
 import io.flutter.embedding.android.FlutterActivity
 

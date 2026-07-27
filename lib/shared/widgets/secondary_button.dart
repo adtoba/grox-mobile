@@ -7,35 +7,51 @@ class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key, 
     required this.text, 
-    this.size = ButtonSize.medium, 
+    this.color = AppColors.offWhite,
+    this.textColor = AppColors.black,
+    this.borderColor = AppColors.grey3,
+    this.width = double.infinity,
+    this.size = ButtonSize.large, 
     required this.onPressed
   });
 
   final String text;
+  final double width;
+  final Color? color;
+  final Color? textColor;
+  final Color? borderColor;
   final ButtonSize size;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      height: _getButtonHeight(size),
-      onPressed: onPressed,
-      color: AppColors.offWhite,
-      shape: RoundedRectangleBorder(
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onPressed,
         borderRadius: BorderRadius.circular(32.r),
-        side: BorderSide(
-          color: AppColors.grey3,
-          width: 1.w,
-        )
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: _getTextSize(size),
-          fontWeight: FontWeight.w400,
-          color: AppColors.white,
+        child: Container(
+          width: width,
+          height: _getButtonHeight(size),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: color ?? AppColors.offWhite,
+            borderRadius: BorderRadius.circular(32.r),
+            border: Border.all(
+              color: borderColor ?? AppColors.grey3,
+              width: 1.w,
+            )
+          ),
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: _getTextSize(size),
+              fontWeight: FontWeight.w400,
+              color: textColor ?? AppColors.black,
+            ),
+          )
         ),
-      )
+      ),
     );
   }
 

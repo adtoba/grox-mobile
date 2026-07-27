@@ -8,7 +8,7 @@
 PRODUCT_NAME = grox
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.usegrox.app.grox
+PRODUCT_BUNDLE_IDENTIFIER = com.usegrox.grox
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.usegrox.app. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.usegrox. All rights reserved.
