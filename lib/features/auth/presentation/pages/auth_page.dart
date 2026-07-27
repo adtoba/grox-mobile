@@ -1,7 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/auth/presentation/pages/auth_scaffolding_page.dart';
 import 'package:grox/features/auth/presentation/widgets/or_divider.dart';
@@ -65,6 +68,22 @@ class _AuthPageState extends ConsumerState<AuthPage> {
               hintText: "Enter password",
             ),
             SizedBox(height: 16.h),
+            Align(
+              alignment: Alignment.centerRight,
+              child: InkWell(
+                onTap: () {},
+                child: Text(
+                  "Forgot password?",
+                  style: TextStyle(
+                    fontFamily: "Geist",
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey8,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 16.h),
           ],
           PrimaryButton(
             height: 52.h,
@@ -107,6 +126,9 @@ class _AuthPageState extends ConsumerState<AuthPage> {
                 ),
                 TextSpan(
                   text: "Create Account",
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    context.push(AppRoutes.createAccount);
+                  },
                   style: TextStyle(
                     fontFamily: "Geist",
                     fontSize: 14.sp,

@@ -5,7 +5,9 @@ import 'package:go_router/go_router.dart';
 import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/features/auth/presentation/pages/auth_page.dart';
 import 'package:grox/features/auth/presentation/pages/create_account_page.dart';
+import 'package:grox/features/auth/presentation/pages/introduction_page.dart';
 import 'package:grox/features/auth/presentation/pages/verify_email_page.dart';
+import 'package:grox/features/auth/presentation/pages/verify_phone_number.dart';
 import 'package:grox/features/welcome/presentation/pages/onboarding_page.dart';
 import 'package:grox/features/welcome/presentation/pages/splash_page.dart';
 
@@ -36,6 +38,14 @@ final goRouterProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: AppRoutes.verifyEmail,
         builder: (context, state) => const VerifyEmailPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.verifyPhone,
+        builder: (context, state) => const VerifyPhoneNumberPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.introduction,
+        builder: (context, state) => const IntroductionPage(),
       ),
     ],
   );

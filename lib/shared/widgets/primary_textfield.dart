@@ -54,7 +54,7 @@ class _PrimaryTextFieldState extends State<PrimaryTextField> {
             letterSpacing: 0
           ),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
             hintText: widget.hintText,
             hintStyle: TextStyle(
               fontSize: 16.sp,

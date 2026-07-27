@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/shared/enum/button_size.dart';
 import 'package:grox/shared/widgets/app_scaffold.dart';
@@ -9,14 +7,14 @@ import 'package:grox/shared/widgets/pin_code_input.dart';
 import 'package:grox/shared/widgets/primary_appbar.dart';
 import 'package:grox/shared/widgets/primary_button.dart';
 
-class VerifyEmailPage extends StatefulWidget {
-  const VerifyEmailPage({super.key});
+class VerifyPhoneNumberPage extends StatefulWidget {
+  const VerifyPhoneNumberPage({super.key});
 
   @override
-  State<VerifyEmailPage> createState() => _VerifyEmailPageState();
+  State<VerifyPhoneNumberPage> createState() => _VerifyPhoneNumberPageState();
 }
 
-class _VerifyEmailPageState extends State<VerifyEmailPage> {
+class _VerifyPhoneNumberPageState extends State<VerifyPhoneNumberPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
@@ -37,7 +35,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Verify your email",
+                        "Verify your phone number",
                         style: TextStyle(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
@@ -54,7 +52,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                       ),
                       SizedBox(height: 8.h),
                       Text(
-                        "adetoba53@gmail.com",
+                        "+234 90 6882 9704",
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w700,
@@ -116,7 +114,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                 size: ButtonSize.large,
                 text: "Submit",
                 onPressed: () {
-                  context.push(AppRoutes.introduction);
+                  
                 },
               ),
             ),

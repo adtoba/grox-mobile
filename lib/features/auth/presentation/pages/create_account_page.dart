@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,6 +103,9 @@ class _CreateAccountPageState extends ConsumerState<CreateAccountPage> {
                 ),
                 TextSpan(
                   text: "Log In",
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    context.push(AppRoutes.login);
+                  },
                   style: TextStyle(
                     fontFamily: "Geist",
                     fontSize: 14.sp,

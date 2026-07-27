@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
-import 'package:grox/shared/widgets/primary_appbar.dart';
 
 class AppScaffold extends StatefulWidget {
   const AppScaffold({
