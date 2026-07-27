@@ -9,31 +9,34 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key, 
     required this.text, 
+    this.height,
     this.color = AppColors.poppy,
     this.textColor = AppColors.white,
     this.width = double.infinity,
     this.size = ButtonSize.large, 
-    required this.onPressed
+    this.onPressed
   });
 
   final String text;
   final double width;
+  final double? height;
   final Color? color;
   final Color? textColor;
   final ButtonSize size;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       minWidth: width,
-      height: _getButtonHeight(size),
+      height: height ?? _getButtonHeight(size),
       onPressed: onPressed,
+      disabledColor: AppColors.poppy4,
       color: color ?? AppColors.poppy,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(32.r),
         side: BorderSide(
-          color: AppColors.poppy,
+          color: onPressed != null ? AppColors.poppy : AppColors.poppy5,
           width: 1.w,
         )
       ),

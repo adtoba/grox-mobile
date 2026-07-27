@@ -8,7 +8,8 @@ class AppTheme {
     brightness: Brightness.light, 
     background: AppColors.white, 
     onSurface: AppColors.grey10, 
-    secondary: AppColors.grey2
+    secondary: AppColors.grey2,
+    text: AppColors.black,
   );
 
 
@@ -17,6 +18,7 @@ class AppTheme {
     required Color background,
     required Color onSurface,
     required Color secondary,
+    required Color text,
   }) {
     final colorScheme = ColorScheme(
       brightness: brightness,
@@ -38,7 +40,6 @@ class AppTheme {
       fontFamily: "Geist",
       appBarTheme: AppBarTheme(
         backgroundColor: background,
-
       )
     );
   }

@@ -54,52 +54,54 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
             ],
           ),
         ),
-        child: Column(
-          children: [
-            Expanded(
-              child: PageView(
-                controller: pageController,
-                onPageChanged: (v) {
-                  setState(() {
-                    currentPage = v;
-                  });
-                },
-                children: items
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
+                child: PageView(
+                  controller: pageController,
+                  onPageChanged: (v) {
+                    setState(() {
+                      currentPage = v;
+                    });
+                  },
+                  children: items
+                ),
               ),
-            ),
-            SizedBox(height: 24.h,),
-            PageIndicatorWidget(
-              currentPage: currentPage, 
-              totalPages: items.length
-            ),
-            SizedBox(height: 50.h,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                children: [
-                  PrimaryButton(
-                    color: AppColors.white,
-                    textColor: AppColors.poppy,
-                    text: "Create Grox Account", 
-                    onPressed: () {
-                      context.push(AppRoutes.createAccount);
-                    }
-                  ),
-                  SizedBox(height: 16.h),
-                  SecondaryButton(
-                    text: "Log In", 
-                    color: Colors.transparent,
-                    borderColor: AppColors.white,
-                    textColor: AppColors.white,
-                    onPressed: () {
-                      context.push(AppRoutes.login);
-                    }
-                  ),
-                  SizedBox(height: 30.h,)
-                ],
+              SizedBox(height: 24.h,),
+              PageIndicatorWidget(
+                currentPage: currentPage, 
+                totalPages: items.length
               ),
-            )
-          ],
+              SizedBox(height: 50.h,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
+                  children: [
+                    PrimaryButton(
+                      color: AppColors.white,
+                      textColor: AppColors.poppy,
+                      text: "Create Grox Account", 
+                      onPressed: () {
+                        context.push(AppRoutes.createAccount);
+                      }
+                    ),
+                    SizedBox(height: 16.h),
+                    SecondaryButton(
+                      text: "Log In", 
+                      color: Colors.transparent,
+                      borderColor: AppColors.white,
+                      textColor: AppColors.white,
+                      onPressed: () {
+                        context.push(AppRoutes.login);
+                      }
+                    ),
+                    SizedBox(height: 30.h,)
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

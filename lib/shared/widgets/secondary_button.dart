@@ -7,16 +7,20 @@ class SecondaryButton extends StatelessWidget {
   const SecondaryButton({
     super.key, 
     required this.text, 
+    this.height,
     this.color = AppColors.offWhite,
     this.textColor = AppColors.black,
     this.borderColor = AppColors.grey3,
     this.width = double.infinity,
     this.size = ButtonSize.large, 
+    this.icon,
     required this.onPressed
   });
 
   final String text;
   final double width;
+  final double? height;
+  final String? icon;
   final Color? color;
   final Color? textColor;
   final Color? borderColor;
@@ -26,15 +30,23 @@ class SecondaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: color ?? Colors.transparent,
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadius.circular(32.r),
         child: Container(
           width: width,
-          height: _getButtonHeight(size),
+          height: height ?? _getButtonHeight(size),
           alignment: Alignment.center,
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                spreadRadius: 0,
+                blurRadius: 2,
+                offset: Offset(0, 1),
+                color: Color(0xff101828).withOpacity(0.05),
+              )
+            ],
             color: color ?? AppColors.offWhite,
             borderRadius: BorderRadius.circular(32.r),
             border: Border.all(
@@ -42,13 +54,25 @@ class SecondaryButton extends StatelessWidget {
               width: 1.w,
             )
           ),
-          child: Text(
-            text,
-            style: TextStyle(
-              fontSize: _getTextSize(size),
-              fontWeight: FontWeight.w400,
-              color: textColor ?? AppColors.black,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (icon != null)
+                Image.asset(
+                  icon!,
+                  width: 24.w,
+                  height: 24.h,
+                ),
+                SizedBox(width: 12.w),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: _getTextSize(size),
+                  fontWeight: FontWeight.w400,
+                  color: textColor ?? AppColors.black,
+                ),
+              ),
+            ],
           )
         ),
       ),
