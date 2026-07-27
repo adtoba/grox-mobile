@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/auth/presentation/pages/auth_scaffolding_page.dart';
 import 'package:grox/features/auth/presentation/widgets/or_divider.dart';
@@ -68,6 +70,8 @@ class _CreateAccountPageState extends ConsumerState<CreateAccountPage> {
                   showPasswordField = true;
                   passwordFocusNode.requestFocus();
                 });
+              } else {
+                context.push(AppRoutes.verifyEmail);
               }
             } : null,
           ),

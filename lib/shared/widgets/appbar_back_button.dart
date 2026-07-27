@@ -6,27 +6,45 @@ import 'package:grox/core/theme/app_colors.dart';
 class AppbarBackButton extends StatelessWidget {
   const AppbarBackButton({super.key});
 
+  static double get size => 40.w;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      height: 40.h,
-      minWidth: 40.w,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.r),
-        side: BorderSide(
-          color: AppColors.grey3,
-          width: 1.w,
-        )
-      ),
-      onPressed: () {
-        if (Navigator.canPop(context)) {
-          Navigator.pop(context);
-        }
-      },
-      child: Image.asset(
-        "back".toPng,
-        width: 24.w,
-        height: 24.h,
+    // AppBar gives the leading a tight width; Align lets the
+    // button keep its intrinsic size instead of stretching.
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Padding(
+        padding: EdgeInsets.only(left: 16.w),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: () {
+              if (Navigator.canPop(context)) {
+                Navigator.pop(context);
+              }
+            },
+            borderRadius: BorderRadius.circular(8.r),
+            child: Ink(
+              width: size,
+              height: size,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
+                  color: AppColors.grey3,
+                  width: 1.w,
+                ),
+              ),
+              child: Center(
+                child: Image.asset(
+                  "back".toPng,
+                  width: 24.w,
+                  height: 24.h,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
