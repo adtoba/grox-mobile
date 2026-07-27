@@ -72,7 +72,7 @@ class _IntroductionPageState extends ConsumerState<IntroductionPage> {
                     label: "Referral code (optional)",
                     hintText: "Enter referral code",
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 32.h),
                   PrimaryButton(
                     text: "Continue",
                     height: 52.h,

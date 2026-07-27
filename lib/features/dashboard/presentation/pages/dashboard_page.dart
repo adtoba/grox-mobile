@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grox/features/dashboard/presentation/widgets/bottom_navigation_bar.dart';
+import 'package:grox/features/home/presentation/pages/home_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -30,7 +31,7 @@ class _DashboardPageState extends State<DashboardPage> {
         controller: pageController,
         onPageChanged: onPageChanged,
         children: [
-          Container(),
+          HomePage(),
           Container(),
           Container(),
           Container(),
