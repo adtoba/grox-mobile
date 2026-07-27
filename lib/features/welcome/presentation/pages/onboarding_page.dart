@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/welcome/presentation/widgets/page_indicator_widget.dart';
 import 'package:grox/shared/widgets/primary_button.dart';
@@ -80,7 +82,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                     textColor: AppColors.poppy,
                     text: "Create Grox Account", 
                     onPressed: () {
-                      
+                      context.push(AppRoutes.createAccount);
                     }
                   ),
                   SizedBox(height: 16.h),
@@ -90,7 +92,7 @@ class _OnboardingPageState extends ConsumerState<OnboardingPage> {
                     borderColor: AppColors.white,
                     textColor: AppColors.white,
                     onPressed: () {
-                      
+                      context.push(AppRoutes.login);
                     }
                   ),
                   SizedBox(height: 30.h,)
