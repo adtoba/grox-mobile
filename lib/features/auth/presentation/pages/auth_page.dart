@@ -96,6 +96,8 @@ class _AuthPageState extends ConsumerState<AuthPage> {
                   showPasswordField = true;
                   passwordFocusNode.requestFocus();
                 });
+              } else {
+                context.push(AppRoutes.dashboard);
               }
             } : null,
           ),
