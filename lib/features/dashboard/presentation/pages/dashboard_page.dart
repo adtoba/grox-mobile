@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grox/features/dashboard/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:grox/features/home/presentation/pages/home_page.dart';
+import 'package:grox/features/send/presentation/pages/send_page.dart';
 import 'package:grox/features/wallet/presentation/pages/wallet_page.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _DashboardPageState extends State<DashboardPage> {
         children: [
           HomePage(),
           WalletPage(),
-          Container(),
+          SendPage(),
           Container(),
         ],
       ),

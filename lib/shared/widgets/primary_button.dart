@@ -17,6 +17,7 @@ class PrimaryButton extends StatelessWidget {
     this.onPressed,
     this.borderColor,
     this.elevation,
+    this.borderRadius,
   });
 
   final String text;
@@ -27,6 +28,7 @@ class PrimaryButton extends StatelessWidget {
   final Color? borderColor;
   final ButtonSize size;
   final double? elevation;
+  final double? borderRadius;
   final VoidCallback? onPressed;
 
   @override
@@ -36,10 +38,10 @@ class PrimaryButton extends StatelessWidget {
       elevation: elevation,
       height: height ?? _getButtonHeight(size),
       onPressed: onPressed,
-      disabledColor: AppColors.poppy4,
+      disabledColor: color ?? AppColors.poppy4,
       color: color ?? AppColors.poppy,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(32.r),
+        borderRadius: BorderRadius.circular(borderRadius ?? 32.r),
         side: BorderSide(
           color: borderColor ?? (onPressed != null ? AppColors.poppy : AppColors.poppy5),
           width: 1.w,
