@@ -3,51 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
 
-class QuickActionsRow extends StatelessWidget {
-  const QuickActionsRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: QuickActionItem(
-            title: "Fund", 
-            icon: "fund", 
-            onTap: () {}
-          ),
-        ),
-        SizedBox(width: 14.w),
-        Expanded(
-          child: QuickActionItem(
-            title: "Send", 
-            icon: "send-icon", 
-            onTap: () {}
-          ),
-        ),
-        SizedBox(width: 14.w),
-        Expanded(
-          child: QuickActionItem(
-            title: "P2P", 
-            icon: "p2p-icon", 
-            onTap: () {}
-          ),
-        ),
-        SizedBox(width: 14.w),
-        Expanded(
-          child: QuickActionItem(
-            title: "Stake", 
-            icon: "stake-icon", 
-            onTap: () {}
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class QuickActionItem extends StatelessWidget {
-  const QuickActionItem({
+class QuickWalletActionItem extends StatelessWidget {
+  const QuickWalletActionItem({
     super.key, 
     required this.title, 
     required this.icon, 
@@ -64,15 +21,15 @@ class QuickActionItem extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(16.r),
       child: Container(
-        height: 81.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
             color: AppColors.grey4,
           )
         ),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         alignment: Alignment.center,
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -81,7 +38,7 @@ class QuickActionItem extends StatelessWidget {
               height: 24.h,
               width: 24.w,
             ),
-            SizedBox(height: 8.h),
+            SizedBox(width: 8.h),
             Text(
               title,
               style: TextStyle(

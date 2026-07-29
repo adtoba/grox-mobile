@@ -14,6 +14,8 @@ class SecondaryButton extends StatelessWidget {
     this.width = double.infinity,
     this.size = ButtonSize.large, 
     this.icon,
+    this.iconHeight,
+    this.iconWidth,
     required this.onPressed
   });
 
@@ -25,6 +27,8 @@ class SecondaryButton extends StatelessWidget {
   final Color? textColor;
   final Color? borderColor;
   final ButtonSize size;
+  final double? iconHeight;
+  final double? iconWidth;
   final VoidCallback onPressed;
 
   @override
@@ -57,13 +61,14 @@ class SecondaryButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (icon != null)
+              if (icon != null)...[
                 Image.asset(
                   icon!,
-                  width: 24.w,
-                  height: 24.h,
+                  width: iconWidth ?? 24.w,
+                  height: iconHeight ?? 24.h,
                 ),
                 SizedBox(width: 12.w),
+              ],
               Text(
                 text,
                 style: TextStyle(

@@ -8,66 +8,71 @@ class TransactionItem extends StatelessWidget {
     super.key, 
     required this.transactionType, 
     required this.transactionAmount, 
-    required this.transactionDate
+    required this.transactionDate,
+    required this.onTap
   });
 
   final String transactionType;
   final String transactionAmount;
   final String transactionDate;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 40.h,
-          width: 40.w,
-          decoration: BoxDecoration(
-            color: getTransactionBgColor(transactionType),
-            borderRadius: BorderRadius.circular(10.r),
+    return InkWell(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Container(
+            height: 40.h,
+            width: 40.w,
+            decoration: BoxDecoration(
+              color: getTransactionBgColor(transactionType),
+              borderRadius: BorderRadius.circular(10.r),
+            ),
+            alignment: Alignment.center,
+            child: Image.asset(
+              getIcon(transactionType),
+              height: 24.h,
+              width: 24.w,
+              fit: BoxFit.contain,
+            ),
           ),
-          alignment: Alignment.center,
-          child: Image.asset(
-            getIcon(transactionType),
-            height: 24.h,
-            width: 24.w,
-            fit: BoxFit.contain,
-          ),
-        ),
-        SizedBox(width: 16.w),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                transactionType,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey9,
+          SizedBox(width: 16.w),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  transactionType,
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey9,
+                  )
+                ),
+                Text(
+                  transactionDate,
+                  style: TextStyle(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey1,
+                  )
                 )
-              ),
-              Text(
-                transactionDate,
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey1,
-                )
-              )
-            ],
+              ],
+            ),
           ),
-        ),
-        SizedBox(width: 20.w),
-        Text(
-          transactionAmount,
-          style: TextStyle(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w400,
-            color: AppColors.grey10,
+          SizedBox(width: 20.w),
+          Text(
+            transactionAmount,
+            style: TextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              color: AppColors.grey10,
+            )
           )
-        )
-      ],
+        ],
+      ),
     );
   }
 

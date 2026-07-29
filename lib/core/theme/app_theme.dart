@@ -40,6 +40,7 @@ class AppTheme {
       fontFamily: "Geist",
       appBarTheme: AppBarTheme(
         backgroundColor: background,
+        scrolledUnderElevation: 0,
       )
     );
   }

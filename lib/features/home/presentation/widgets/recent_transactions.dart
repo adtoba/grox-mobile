@@ -84,7 +84,7 @@ class RecentTransactions extends ConsumerWidget {
           ),
           ListView.separated(
             shrinkWrap: true,
-            padding: EdgeInsets.symmetric(vertical: 20.h),
+            padding: EdgeInsets.symmetric(vertical: 10.h),
             physics: const NeverScrollableScrollPhysics(),
             separatorBuilder: (c, i) {
               return SizedBox(height: 20.h);
@@ -94,6 +94,7 @@ class RecentTransactions extends ConsumerWidget {
                 transactionType: transactions[i]["type"],
                 transactionAmount: transactions[i]["amount"],
                 transactionDate: transactions[i]["date"],
+                onTap: () {}
               );
             },
             itemCount: transactions.length,
