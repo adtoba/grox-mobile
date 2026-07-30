@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 
 class PromoWidget extends StatelessWidget {
-  const PromoWidget({super.key});
+  const PromoWidget({super.key, this.showCloseButton = true});
+
+  final bool? showCloseButton;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +39,12 @@ class PromoWidget extends StatelessWidget {
               ),
             ),
           ),
-          Icon(
-            Icons.close,
-            color: Colors.white,
-            size: 24.sp,
-          )
+          if(showCloseButton == true)
+            Icon(
+              Icons.close,
+              color: Colors.white,
+              size: 24.sp,
+            )
         ],
       ),
     );

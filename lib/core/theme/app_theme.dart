@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/theme/app_colors.dart';
 
 class AppTheme {
@@ -41,6 +42,13 @@ class AppTheme {
       appBarTheme: AppBarTheme(
         backgroundColor: background,
         scrolledUnderElevation: 0,
+        centerTitle: false,
+        titleTextStyle: TextStyle(
+          fontSize: 18.sp,
+          fontFamily: "Geist",
+          fontWeight: FontWeight.w600,
+          color: AppColors.grey9,
+        ),
       )
     );
   }

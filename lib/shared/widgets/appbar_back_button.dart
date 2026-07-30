@@ -37,9 +37,10 @@ class AppbarBackButton extends StatelessWidget {
               ),
               child: Center(
                 child: Image.asset(
-                  "back".toPng,
-                  width: 24.w,
-                  height: 24.h,
+                  "arrow_left".toPng,
+                  width: 16.w,
+                  height: 16.h,
+                  color: AppColors.grey9,
                 ),
               ),
             ),

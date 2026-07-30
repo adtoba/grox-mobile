@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
+import 'package:grox/features/home/presentation/widgets/buy_crypto_promo_widget.dart';
 import 'package:grox/features/home/presentation/widgets/promo_widget.dart';
 import 'package:grox/features/home/presentation/widgets/quick_actions_row.dart';
 import 'package:grox/features/home/presentation/widgets/recent_transactions.dart';
@@ -40,6 +41,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             CircleAvatar(
               radius: 25.r,
+              backgroundColor: Colors.transparent,
               backgroundImage: AssetImage(
                 "avatar".toPng
               ),
@@ -82,37 +84,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 16.h),
               PromoWidget(),
               SizedBox(height: 16.h),
-              MaterialButton(
-                onPressed: () {
-                  // TODO: Implement buy and sell action
-                },
-                height: 56.h,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.r),
-                  side: BorderSide(
-                    color: AppColors.blue1,
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "usdt-usdc".toPng,
-                      height: 24.h,
-                      width: 40.w,
-                    ),
-                    SizedBox(width: 10.w),
-                    Text(
-                      "Buy & Sell your USDC/USDT",
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.blue7,
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              BuyCryptoPromoWidget(),
               SizedBox(height: 16.h),
               RecentTransactions(),
             ],

@@ -3,6 +3,7 @@ import 'package:grox/features/dashboard/presentation/widgets/bottom_navigation_b
 import 'package:grox/features/home/presentation/pages/home_page.dart';
 import 'package:grox/features/p2p/presentation/pages/p2p_page.dart';
 import 'package:grox/features/send/presentation/pages/send_page.dart';
+import 'package:grox/features/settings/presentation/pages/settings_page.dart';
 import 'package:grox/features/wallet/presentation/pages/wallet_page.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -30,7 +31,6 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
@@ -40,7 +40,7 @@ class _DashboardPageState extends State<DashboardPage> {
           WalletPage(),
           SendPage(),
           P2PPage(),
-          Container()
+          SettingsPage()
         ],
       ),
       bottomNavigationBar: PrimaryBottomNavigationBar(

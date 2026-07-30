@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
-import 'package:grox/shared/widgets/primary_button.dart';
 
 class SendTypeWidget extends StatelessWidget {
   const SendTypeWidget({

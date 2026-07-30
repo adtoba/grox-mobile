@@ -98,6 +98,7 @@ class _P2PPageState extends State<P2PPage> {
       body: PageView(
         controller: pageController,
         onPageChanged: onPageChanged,
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           P2PBuyPage(),
           P2PSellPage(),
