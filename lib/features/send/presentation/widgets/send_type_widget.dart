@@ -83,23 +83,23 @@ class SendTypeWidget extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16.h),
-            if(isSelected)...[
-              PrimaryButton(
-                borderRadius: 8.r,
-                text: "Continue",
-                onPressed: () {}
-              )
-            ] else ...[
-              PrimaryButton(
-                borderRadius: 8.r,
-                borderColor: Colors.transparent,
-                text: "Continue",
-                color: Colors.transparent,
-                textColor: AppColors.grey1,
-                onPressed: isSelected ? () {} : null,
-              )
-            ],
+            // SizedBox(height: 16.h),
+            // if(isSelected)...[
+            //   PrimaryButton(
+            //     borderRadius: 8.r,
+            //     text: "Continue",
+            //     onPressed: () {}
+            //   )
+            // ] else ...[
+            //   PrimaryButton(
+            //     borderRadius: 8.r,
+            //     borderColor: Colors.transparent,
+            //     text: "Continue",
+            //     color: Colors.transparent,
+            //     textColor: AppColors.grey1,
+            //     onPressed: isSelected ? () {} : null,
+            //   )
+            // ],
             
           ],
         ),

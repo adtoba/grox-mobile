@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grox/features/dashboard/presentation/widgets/bottom_navigation_bar.dart';
 import 'package:grox/features/home/presentation/pages/home_page.dart';
+import 'package:grox/features/p2p/presentation/pages/p2p_page.dart';
 import 'package:grox/features/send/presentation/pages/send_page.dart';
 import 'package:grox/features/wallet/presentation/pages/wallet_page.dart';
 
@@ -29,14 +30,17 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
         children: [
           HomePage(),
           WalletPage(),
           SendPage(),
-          Container(),
+          P2PPage(),
+          Container()
         ],
       ),
       bottomNavigationBar: PrimaryBottomNavigationBar(

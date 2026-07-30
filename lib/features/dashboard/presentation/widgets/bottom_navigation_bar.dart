@@ -16,10 +16,13 @@ class PrimaryBottomNavigationBar extends StatefulWidget {
 class _PrimaryBottomNavigationBarState extends State<PrimaryBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    final bottomInset = MediaQuery.viewPaddingOf(context).bottom;
+    final bottomSpacing = bottomInset > 0 ? bottomInset : 10.h;
+
+    return Padding(
+      padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: bottomSpacing),
       child: Container(
         height: 56.h,
-        margin: EdgeInsets.symmetric(horizontal: 16.w),
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
         width: double.infinity,
         decoration: BoxDecoration(
@@ -34,7 +37,7 @@ class _PrimaryBottomNavigationBarState extends State<PrimaryBottomNavigationBar>
               offset: Offset(0, 4),
               blurRadius: 8,
               spreadRadius: 0,
-              color: AppColors.black.withOpacity(0.15),
+              color: AppColors.black.withValues(alpha: 0.15),
             )
           ]
         ),
