@@ -18,6 +18,7 @@ class PrimaryButton extends StatelessWidget {
     this.borderColor,
     this.elevation,
     this.borderRadius,
+    this.icon,
   });
 
   final String text;
@@ -30,6 +31,7 @@ class PrimaryButton extends StatelessWidget {
   final double? elevation;
   final double? borderRadius;
   final VoidCallback? onPressed;
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -47,13 +49,22 @@ class PrimaryButton extends StatelessWidget {
           width: 1.w,
         )
       ),
-      child: Text(
-        text,
-        style: TextStyle(
-          fontSize: _getTextSize(size),
-          fontWeight: FontWeight.w400,
-          color: textColor ?? AppColors.white,
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: _getTextSize(size),
+              fontWeight: FontWeight.w400,
+              color: textColor ?? AppColors.white,
+            ),
+          ),
+          if(icon != null)...[
+            SizedBox(width: 8.w),
+            Icon(icon, size: 16.sp, color: textColor ?? AppColors.white),
+          ],
+        ],
       )
     );
   }

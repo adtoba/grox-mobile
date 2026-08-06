@@ -203,7 +203,7 @@ class TraderDetailsHeader extends StatelessWidget {
                         ),
                         Text(
                           "4.9",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -221,7 +221,7 @@ class TraderDetailsHeader extends StatelessWidget {
                         ),
                         Text(
                           "1246 Trades",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -230,7 +230,7 @@ class TraderDetailsHeader extends StatelessWidget {
                         ),
                         Text(
                           "•",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -239,7 +239,7 @@ class TraderDetailsHeader extends StatelessWidget {
                         ),
                         Text(
                           "99% success rate",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -267,7 +267,7 @@ class TraderDetailsHeader extends StatelessWidget {
                     children: [
                       Text(
                         "₦1,580",
-                        textScaler: TextScaler.noScaling,
+                        // textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w400,
@@ -276,7 +276,7 @@ class TraderDetailsHeader extends StatelessWidget {
                       ),
                       Text(
                         "Price per Grox",
-                        textScaler: TextScaler.noScaling,
+                        // textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,
@@ -292,7 +292,7 @@ class TraderDetailsHeader extends StatelessWidget {
                     children: [
                       Text(
                         "23m",
-                        textScaler: TextScaler.noScaling,
+                        // textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w400,
@@ -301,7 +301,7 @@ class TraderDetailsHeader extends StatelessWidget {
                       ),
                       Text(
                         "Avg Response Time",
-                        textScaler: TextScaler.noScaling,
+                        // textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400,

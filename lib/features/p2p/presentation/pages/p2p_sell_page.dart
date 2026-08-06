@@ -41,7 +41,7 @@ class _P2PSellPagetate extends State<P2PSellPage> {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) {
-                return SizedBox(width: 10.h);
+                return SizedBox(width: 8.h);
               },
               itemCount: currencies.length,
               itemBuilder: (context, index) {

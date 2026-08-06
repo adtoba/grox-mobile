@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
@@ -16,7 +18,7 @@ class PrimaryBottomNavigationBar extends StatefulWidget {
 class _PrimaryBottomNavigationBarState extends State<PrimaryBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
-    final bottomInset = MediaQuery.viewPaddingOf(context).bottom;
+    final bottomInset = MediaQuery.viewPaddingOf(context).bottom  + (Platform.isAndroid ? 10 : 0);
     final bottomSpacing = bottomInset > 0 ? bottomInset : 10.h;
 
     return Padding(

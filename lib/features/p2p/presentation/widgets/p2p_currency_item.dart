@@ -13,6 +13,7 @@ class P2pCurrencyItem extends StatelessWidget {
     return Container(
       height: 38.h,
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: isSelected ? AppColors.poppy5 : AppColors.white,
         border: Border.all(

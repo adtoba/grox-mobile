@@ -25,7 +25,7 @@ class TabIndicatorWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(32.r),
       child: Container(
         height: 36.h,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: isActive ? activeColor : Colors.transparent,

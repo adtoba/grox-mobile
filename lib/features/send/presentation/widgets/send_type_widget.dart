@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
+import 'package:grox/shared/widgets/primary_button.dart';
 
 class SendTypeWidget extends StatelessWidget {
   const SendTypeWidget({
@@ -82,23 +83,25 @@ class SendTypeWidget extends StatelessWidget {
                 ),
               ],
             ),
-            // SizedBox(height: 16.h),
-            // if(isSelected)...[
-            //   PrimaryButton(
-            //     borderRadius: 8.r,
-            //     text: "Continue",
-            //     onPressed: () {}
-            //   )
-            // ] else ...[
-            //   PrimaryButton(
-            //     borderRadius: 8.r,
-            //     borderColor: Colors.transparent,
-            //     text: "Continue",
-            //     color: Colors.transparent,
-            //     textColor: AppColors.grey1,
-            //     onPressed: isSelected ? () {} : null,
-            //   )
-            // ],
+            SizedBox(height: 16.h),
+            if(isSelected)...[
+              PrimaryButton(
+                borderRadius: 8.r,
+                text: "Continue",
+                icon: Icons.arrow_forward,
+                onPressed: () {}
+              )
+            ] else ...[
+              PrimaryButton(
+                borderRadius: 8.r,
+                borderColor: Colors.transparent,
+                text: "Continue",
+                color: Colors.transparent,
+                textColor: AppColors.grey1,
+                icon: Icons.arrow_forward,
+                onPressed: isSelected ? () {} : null,
+              )
+            ],
             
           ],
         ),

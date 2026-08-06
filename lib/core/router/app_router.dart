@@ -11,6 +11,8 @@ import 'package:grox/features/auth/presentation/pages/verify_email_page.dart';
 import 'package:grox/features/auth/presentation/pages/verify_phone_number.dart';
 import 'package:grox/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:grox/features/p2p/presentation/pages/p2p_trade_details_page.dart';
+import 'package:grox/features/send/presentation/pages/send_wallet_page.dart';
+import 'package:grox/features/wallet/presentation/pages/fund_wallet_page.dart';
 import 'package:grox/features/welcome/presentation/pages/onboarding_page.dart';
 import 'package:grox/features/welcome/presentation/pages/splash_page.dart';
 
@@ -64,6 +66,14 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           final tradeType = state.extra as String? ?? 'buy';
           return P2pTradeDetailsPage(tradeType: tradeType);
         },
+      ),
+      GoRoute(
+        path: AppRoutes.sendWallet,
+        builder: (context, state) => const SendWalletPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.fundWallet,
+        builder: (context, state) => const FundWalletPage(),
       ),
     ],
   );

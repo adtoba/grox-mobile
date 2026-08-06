@@ -102,7 +102,7 @@ class P2pTraderWidget extends StatelessWidget {
                         ),
                         Text(
                           "4.9",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -111,7 +111,7 @@ class P2pTraderWidget extends StatelessWidget {
                         ),
                         Text(
                           "•",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -120,7 +120,7 @@ class P2pTraderWidget extends StatelessWidget {
                         ),
                         Text(
                           "1246 Trades",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -129,7 +129,7 @@ class P2pTraderWidget extends StatelessWidget {
                         ),
                         Text(
                           "•",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
@@ -138,7 +138,7 @@ class P2pTraderWidget extends StatelessWidget {
                         ),
                         Text(
                           "99% success rate",
-                          textScaler: TextScaler.noScaling,
+                          // textScaler: TextScaler.noScaling,
                           style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w400,

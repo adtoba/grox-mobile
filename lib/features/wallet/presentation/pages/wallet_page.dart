@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/home/presentation/widgets/recent_transactions.dart';
 import 'package:grox/features/wallet/presentation/widgets/quick_wallet_action_item.dart';
@@ -168,7 +170,9 @@ class WalletQuickActionsRow extends StatelessWidget {
               child: QuickWalletActionItem(
                 title: "Fund Wallet", 
                 icon: "receive-transaction", 
-                onTap: () {}
+                onTap: () {
+                  context.push(AppRoutes.fundWallet);
+                }
               ),
             ),
             SizedBox(width: 14.w),
@@ -176,7 +180,9 @@ class WalletQuickActionsRow extends StatelessWidget {
               child: QuickWalletActionItem(
               title: "Send / Withdraw", 
                 icon: "withdraw", 
-                onTap: () {}
+                onTap: () {
+                  context.push(AppRoutes.sendWallet);
+                }
               ),
             ),
           ],
