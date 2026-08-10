@@ -5,7 +5,7 @@ import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/shared/widgets/tab_indicator_widget.dart';
 
 class P2pTraderWidget extends StatelessWidget {
-  P2pTraderWidget({
+  const P2pTraderWidget({
     super.key, 
     this.paymentMethods = const [
       "Bank Transfer",

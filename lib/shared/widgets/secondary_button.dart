@@ -48,7 +48,7 @@ class SecondaryButton extends StatelessWidget {
                 spreadRadius: 0,
                 blurRadius: 2,
                 offset: Offset(0, 1),
-                color: Color(0xff101828).withOpacity(0.05),
+                color: Color(0xff101828).withValues(alpha: 0.05),
               )
             ],
             color: color ?? AppColors.offWhite,

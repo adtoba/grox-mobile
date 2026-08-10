@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
 import 'package:grox/features/wallet/presentation/screens/bank_transfer_details_screen.dart';
+import 'package:grox/features/wallet/presentation/screens/debit_card_fund_screen.dart';
 import 'package:grox/features/wallet/presentation/widgets/amount_suggestion_widget.dart';
 import 'package:grox/features/wallet/presentation/widgets/fiat_deposit_item_widget.dart';
 import 'package:grox/features/wallet/presentation/widgets/rate_widget.dart';
@@ -182,6 +183,8 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
                   onTap: () {
                     if(fiatDepositItems[index].fiatOption == 'Bank Transfer') {
                       showBankTransferDetails();
+                    } else if(fiatDepositItems[index].fiatOption == 'Debit/Credit Card') {
+                      showDebitCardFundScreen();
                     }
                   },
                 );
@@ -200,9 +203,6 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
     showModalBottomSheet(
       context: context, 
       isScrollControlled: true,
-      // constraints: BoxConstraints(
-      //   maxHeight: MediaQuery.of(context).size.height * 0.8,
-      // ),
       backgroundColor: AppColors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -217,6 +217,22 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
           routingNumber: '021000021',
           reference: 'GRX-17537821312312',
         );
+      }
+    );
+  }
+
+  void showDebitCardFundScreen() {
+    showModalBottomSheet(
+      context: context, 
+      isScrollControlled: true,
+      backgroundColor: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(24.r)
+        ),
+      ),
+      builder: (context) {
+        return DebitCardFundScreen();
       }
     );
   }

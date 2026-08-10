@@ -88,7 +88,7 @@ class SendTypeWidget extends StatelessWidget {
               PrimaryButton(
                 borderRadius: 8.r,
                 text: "Continue",
-                icon: Icons.arrow_forward,
+                suffixIcon: Icons.arrow_forward,
                 onPressed: () {}
               )
             ] else ...[
@@ -98,7 +98,7 @@ class SendTypeWidget extends StatelessWidget {
                 text: "Continue",
                 color: Colors.transparent,
                 textColor: AppColors.grey1,
-                icon: Icons.arrow_forward,
+                suffixIcon: Icons.arrow_forward,
                 onPressed: isSelected ? () {} : null,
               )
             ],

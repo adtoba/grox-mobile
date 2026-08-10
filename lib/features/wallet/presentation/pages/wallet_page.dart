@@ -168,7 +168,7 @@ class WalletQuickActionsRow extends StatelessWidget {
           children: [
             Expanded(
               child: QuickWalletActionItem(
-                title: "Fund Wallet", 
+                title: "Fund", 
                 icon: "receive-transaction", 
                 onTap: () {
                   context.push(AppRoutes.fundWallet);
@@ -178,7 +178,7 @@ class WalletQuickActionsRow extends StatelessWidget {
             SizedBox(width: 14.w),
             Expanded(
               child: QuickWalletActionItem(
-              title: "Send / Withdraw", 
+              title: "Send", 
                 icon: "withdraw", 
                 onTap: () {
                   context.push(AppRoutes.sendWallet);
@@ -192,7 +192,7 @@ class WalletQuickActionsRow extends StatelessWidget {
           children: [
             Expanded(
               child: QuickWalletActionItem(
-                title: "Stake Grox", 
+                title: "Stake", 
                 icon: "stake", 
                 onTap: () {}
               ),
@@ -200,7 +200,7 @@ class WalletQuickActionsRow extends StatelessWidget {
             SizedBox(width: 14.w),
             Expanded(
               child: QuickWalletActionItem(
-                title: "Convert / Swap", 
+                title: "Convert", 
                 icon: "convert", 
                 onTap: () {}
               ),

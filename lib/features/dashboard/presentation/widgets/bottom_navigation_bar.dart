@@ -22,7 +22,11 @@ class _PrimaryBottomNavigationBarState extends State<PrimaryBottomNavigationBar>
     final bottomSpacing = bottomInset > 0 ? bottomInset : 10.h;
 
     return Padding(
-      padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: bottomSpacing),
+      padding: EdgeInsets.only(
+        left: 16.w, 
+        right: 16.w, 
+        bottom: Platform.isIOS ? 20.h : bottomSpacing
+      ),
       child: Container(
         height: 56.h,
         padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),

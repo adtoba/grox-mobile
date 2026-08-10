@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
-import 'package:grox/features/wallet/presentation/screens/cryto_transfer_details_screen.dart';
+import 'package:grox/features/wallet/presentation/screens/crypto_transfer_details_screen.dart';
 import 'package:grox/features/wallet/presentation/widgets/crypto_deposit_item.dart';
 import 'package:grox/features/wallet/presentation/widgets/fund_wallet_notice_widget.dart';
 

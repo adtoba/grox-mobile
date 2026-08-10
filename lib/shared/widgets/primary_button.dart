@@ -18,7 +18,8 @@ class PrimaryButton extends StatelessWidget {
     this.borderColor,
     this.elevation,
     this.borderRadius,
-    this.icon,
+    this.suffixIcon,
+    this.prefixIcon,
   });
 
   final String text;
@@ -31,7 +32,8 @@ class PrimaryButton extends StatelessWidget {
   final double? elevation;
   final double? borderRadius;
   final VoidCallback? onPressed;
-  final IconData? icon;
+  final IconData? suffixIcon;
+  final IconData? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +54,10 @@ class PrimaryButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          if(prefixIcon != null)...[
+            Icon(prefixIcon, size: 16.sp, color: textColor ?? AppColors.white),
+            SizedBox(width: 8.w),
+          ],
           Text(
             text,
             style: TextStyle(
@@ -60,9 +66,9 @@ class PrimaryButton extends StatelessWidget {
               color: textColor ?? AppColors.white,
             ),
           ),
-          if(icon != null)...[
+          if(suffixIcon != null)...[
             SizedBox(width: 8.w),
-            Icon(icon, size: 16.sp, color: textColor ?? AppColors.white),
+            Icon(suffixIcon, size: 16.sp, color: textColor ?? AppColors.white),
           ],
         ],
       )
