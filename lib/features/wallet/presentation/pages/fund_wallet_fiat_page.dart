@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
+import 'package:grox/features/wallet/presentation/screens/bank_transfer_details_screen.dart';
 import 'package:grox/features/wallet/presentation/widgets/amount_suggestion_widget.dart';
 import 'package:grox/features/wallet/presentation/widgets/fiat_deposit_item_widget.dart';
 import 'package:grox/features/wallet/presentation/widgets/rate_widget.dart';
@@ -178,7 +179,11 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
                   estimatedDuration: fiatDepositItems[index].estimatedDuration,
                   depositFee: fiatDepositItems[index].depositFee,
                   limits: fiatDepositItems[index].limits,
-                  onTap: () {},
+                  onTap: () {
+                    if(fiatDepositItems[index].fiatOption == 'Bank Transfer') {
+                      showBankTransferDetails();
+                    }
+                  },
                 );
               },
               separatorBuilder: (context, index) => SizedBox(height: 16.h), 
@@ -188,6 +193,31 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void showBankTransferDetails() {
+    showModalBottomSheet(
+      context: context, 
+      isScrollControlled: true,
+      // constraints: BoxConstraints(
+      //   maxHeight: MediaQuery.of(context).size.height * 0.8,
+      // ),
+      backgroundColor: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(24.r)
+        ),
+      ),
+      builder: (context) {
+        return BankTransferDetailsScreen(
+          bankName: 'Wells Fargo',
+          accountNumber: '1234567890',
+          accountName: 'GroxInc/Toba',
+          routingNumber: '021000021',
+          reference: 'GRX-17537821312312',
+        );
+      }
     );
   }
 }

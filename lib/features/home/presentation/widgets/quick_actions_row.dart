@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
+import 'package:grox/core/router/app_routes.dart';
 import 'package:grox/core/theme/app_colors.dart';
 
 class QuickActionsRow extends StatelessWidget {
@@ -14,7 +16,9 @@ class QuickActionsRow extends StatelessWidget {
           child: QuickActionItem(
             title: "Fund", 
             icon: "fund", 
-            onTap: () {}
+            onTap: () {
+              context.push(AppRoutes.fundWallet);
+            }
           ),
         ),
         SizedBox(width: 14.w),

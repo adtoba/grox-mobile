@@ -4,11 +4,13 @@ import 'package:grox/core/theme/app_colors.dart';
 
 class AltTextField extends StatefulWidget {
   const AltTextField({
-    super.key, 
+    super.key,
     this.label,
     this.controller,
     this.prefixText,
     this.suffixText,
+    this.prefixIcon,
+    this.suffixIcon,
     this.inputType,
     this.hintText,
     this.isPassword = false,
@@ -19,6 +21,8 @@ class AltTextField extends StatefulWidget {
   final TextEditingController? controller;
   final String? prefixText;
   final String? suffixText;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final TextInputType? inputType;
   final String? label;
   final String? hintText;
@@ -36,13 +40,13 @@ class _AltTextFieldState extends State<AltTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (widget.label != null)...[
+        if (widget.label != null) ...[
           Text(
             widget.label!,
             style: TextStyle(
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
-              color: Color(0xff344054)
+              color: Color(0xff344054),
             ),
           ),
           SizedBox(height: 8.h),
@@ -59,6 +63,14 @@ class _AltTextFieldState extends State<AltTextField> {
           ),
           child: Row(
             children: [
+              if (widget.prefixIcon != null) ...[
+                SizedBox(
+                  width: 20.w,
+                  height: 20.h,
+                  child: widget.prefixIcon,
+                ),
+                SizedBox(width: 8.w),
+              ],
               if (widget.prefixText != null) ...[
                 Text(
                   widget.prefixText!,
@@ -107,9 +119,17 @@ class _AltTextFieldState extends State<AltTextField> {
                   ),
                 ),
               ],
+              if (widget.suffixIcon != null) ...[
+                SizedBox(width: 8.w),
+                SizedBox(
+                  width: 20.w,
+                  height: 20.h,
+                  child: widget.suffixIcon,
+                ),
+              ],
             ],
           ),
-        )
+        ),
       ],
     );
   }

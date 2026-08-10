@@ -53,7 +53,7 @@ class _FundWalletPageState extends State<FundWalletPage> {
                 color: Color(0xff868686),
               ),
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 16.h),
             Container(
               height: 52.h,
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.w),

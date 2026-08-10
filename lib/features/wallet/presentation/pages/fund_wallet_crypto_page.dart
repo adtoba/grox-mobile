@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
+import 'package:grox/features/wallet/presentation/screens/cryto_transfer_details_screen.dart';
 import 'package:grox/features/wallet/presentation/widgets/crypto_deposit_item.dart';
 import 'package:grox/features/wallet/presentation/widgets/fund_wallet_notice_widget.dart';
 
@@ -92,7 +93,9 @@ class _FundWalletCryptoPageState extends State<FundWalletCryptoPage> {
                   estimatedDuration: cryptoDepositItems[index].estimatedDuration,
                   depositFee: cryptoDepositItems[index].depositFee,
                   minDeposit: cryptoDepositItems[index].minDeposit,
-                  onTap: () {},
+                  onTap: () {
+                    showCryptoTransferDetails();
+                  },
                 );
               },
               separatorBuilder: (context, index) => SizedBox(height: 16.h), 
@@ -107,6 +110,22 @@ class _FundWalletCryptoPageState extends State<FundWalletCryptoPage> {
           ],
         ),
       ),
+    );
+  }
+
+  void showCryptoTransferDetails() {
+    showModalBottomSheet(
+      context: context, 
+      isScrollControlled: true,
+      backgroundColor: AppColors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(24.r)
+        ),
+      ),
+      builder: (context) {
+        return CryptoTransferDetailsScreen();
+      }
     );
   }
 }
