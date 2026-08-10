@@ -1,20 +1,14 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:grox/core/extensions/image_path_extension.dart';
 import 'package:grox/core/theme/app_colors.dart';
-import 'package:grox/features/wallet/presentation/screens/review_transaction_details_screen.dart';
-import 'package:grox/features/wallet/presentation/screens/transaction_successful_screen.dart';
-import 'package:grox/features/wallet/presentation/widgets/secured_info_widget.dart';
 import 'package:grox/shared/enum/button_size.dart';
 import 'package:grox/shared/widgets/primary_button.dart';
-import 'package:grox/shared/widgets/primary_textfield.dart';
+import 'package:grox/shared/widgets/secondary_button.dart';
 
-class DebitCardFundScreen extends StatelessWidget {
-  const DebitCardFundScreen({super.key});
+class TransactionSuccessfulScreen extends StatelessWidget {
+  const TransactionSuccessfulScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,19 +16,12 @@ class DebitCardFundScreen extends StatelessWidget {
       child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  "Card Payment",
-                  style: TextStyle(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
                 InkWell(
                   onTap: () => Navigator.pop(context),
                   borderRadius: BorderRadius.circular(8.r),
@@ -54,94 +41,84 @@ class DebitCardFundScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 16.h),
-            PrimaryTextField(
-              label: "Cardholder Name",
-              hintText: "Enter cardholder name",
-            ),
-            SizedBox(height: 16.h),
-            PrimaryTextField(
-              label: "Card Number",
-              hintText: "0000 0000 0000 0000",
-            ),
-            SizedBox(height: 16.h),
-            Row(
-              children: [
-                Expanded(
-                  child: PrimaryTextField(
-                    label: "Expiry",
-                    hintText: "MM/YY",
-                  ),
-                ),
-                SizedBox(width: 20.w),
-                Expanded(
-                  child: PrimaryTextField(
-                    label: "CVV",
-                    hintText: "000"
-                  ),
-                ),
-              ],
+            Image.asset(
+              "grox-check".toPng,
+              width: 120.w,
+              height: 110.h,
             ),
             SizedBox(height: 16.h),
             Text(
-              "Kindly note that Grox does not store your card information.",
+              "Transaction Successful",
               style: TextStyle(
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w400,
-                color: AppColors.error,
+                fontSize: 24.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.grey10,
               ),
             ),
-            SizedBox(height: 16.h),
-            SecuredInfoWidget(
-              title: "Payment secured", 
-              value: "Your payment is protected by 256-bit SSL encryption and PCI DSS compliance.",
-            ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 5.h),
             Text.rich(
               TextSpan(
                 children: [
                   TextSpan(
-                    text: "Processing Fee: ",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.grey10,
-                    ),
-                  ),
-                  TextSpan(
-                    text: "2.5% + \$0.14",
+                    text: "You've sent ",
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
+                      color: AppColors.grey9,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "\$500 ",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.grey9,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "to ",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.grey9,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "Lara Campbell",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.grey9,
+                    ),
+                  ),
+                  TextSpan(
+                    text: "(@laragrox)",
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.grey9,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 24.h),
             PrimaryButton(
-              text: "Pay \$500",
-              prefixIcon: Icons.lock_outline,
+              text: "See receipt",
+              prefixIcon: Icons.receipt_long_outlined,
               color: AppColors.black,
               size: ButtonSize.xlarge,
               borderRadius: 16.r,
               borderColor: Colors.transparent,
-              onPressed: () {
-                context.pop();
-                showModalBottomSheet(
-                  context: context,
-                  isScrollControlled: true, 
-                  backgroundColor: AppColors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(24.r)
-                    ),
-                  ),
-                  builder: (context) {
-                    return ReviewTransactionDetailsScreen();
-                  }
-                );
-              },
+              onPressed: () {},
+            ),
+            SizedBox(height: 16.h),
+            SecondaryButton(
+              text: "Go to wallet",
+              size: ButtonSize.xlarge,
+              borderRadius: 16.r,
+              borderColor: AppColors.grey9,
+              onPressed: () {},
             ),
           ],
         ),

@@ -16,6 +16,7 @@ class SecondaryButton extends StatelessWidget {
     this.icon,
     this.iconHeight,
     this.iconWidth,
+    this.borderRadius,
     required this.onPressed
   });
 
@@ -26,6 +27,7 @@ class SecondaryButton extends StatelessWidget {
   final Color? color;
   final Color? textColor;
   final Color? borderColor;
+  final double? borderRadius;
   final ButtonSize size;
   final double? iconHeight;
   final double? iconWidth;
@@ -52,7 +54,7 @@ class SecondaryButton extends StatelessWidget {
               )
             ],
             color: color ?? AppColors.offWhite,
-            borderRadius: BorderRadius.circular(32.r),
+            borderRadius: BorderRadius.circular(borderRadius ?? 32.r),
             border: Border.all(
               color: borderColor ?? AppColors.grey3,
               width: 1.w,

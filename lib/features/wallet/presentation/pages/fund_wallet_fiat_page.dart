@@ -232,7 +232,12 @@ class _FundWalletFiatPageState extends State<FundWalletFiatPage> {
         ),
       ),
       builder: (context) {
-        return DebitCardFundScreen();
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.viewInsetsOf(context).bottom,
+          ),
+          child: const DebitCardFundScreen(),
+        );
       }
     );
   }
